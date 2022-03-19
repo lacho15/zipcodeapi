@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# curl with correct response
+curl -i -X GET http://13.52.243.183:3000/zip-codes/80800
 
-Things you may want to cover:
+# curl with incorrect response
+curl -i -X GET http://13.52.243.183:3000/zip-codes/08080
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Ejecutar las pruebas unitarias
+rspec spec/tests/zipcodes_spec.rb
