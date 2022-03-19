@@ -26,13 +26,13 @@ describe 'zipcodes unit test', type: :request do
 		expect(json["federal_entity"]).to eql("Sinaloa")
 	end
 	
-	# Prueba 4: api responde status 404 para un CP que no existe y un json con un mensaje de error
+	# Prueba 4: api responde status 404 para un CP que no existe y un json vacio
 	it 'API GET responde status 404 not found' do
 		get '/zip-codes/00001'
 		expect(response).to have_http_status(:not_found)
 		
 		json = JSON.parse(response.body)
-		expect(json["error"]). to include("not found")
+		expect(json.size).to eq(0)
 	end
 	
 	

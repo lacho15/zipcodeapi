@@ -35,7 +35,7 @@ class ZipcodesController < ActionController::API
 		
 		# Si no se encontro en memoria ni en el archivo retorna un 404
 		if hJson.empty?
-			render json: {error: "zipcode #{@zipcode} not found"}, status: :not_found
+			render json: {}, status: :not_found
 		else
 			render json: hJson
 		end
